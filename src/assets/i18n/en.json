@@ -1,0 +1,14 @@
+{
+  "button": {
+    "start": "Start",
+    "preview": "Preview",
+    "create": "Create PDF",
+    "more": "Learn more"
+  },
+  "intro": {
+    "blog": "Blog",
+    "description-1": "conotes creates a PDF ",
+    "description-2": "in cornell format from your notes ",
+    "text": "Just type your notes in the corresponding fields - conotes will generate a PDF in cornell format for you."
+  }
+}
