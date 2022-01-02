@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-announcement',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnnouncementComponent implements OnInit {
 
-  constructor() { }
+  dismiss: boolean = false;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
+
+  dismissAnnouncement(): void {
+    this.dismiss = true;
+  }
+
 
 }

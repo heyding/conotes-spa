@@ -28,5 +28,9 @@
     "summary": "Summary",
     "question": "All noted?",
     "cta": "Let's create your PDF"
-}
+  },
+  "announcement": {
+    "notice": "We would appreciate your support!",
+    "message": "We would appreciate your support for the maintenance and further development of conotes. Thanks!"
+  }
 }
