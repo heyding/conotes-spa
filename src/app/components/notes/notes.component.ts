@@ -50,7 +50,6 @@ export class NotesComponent implements OnInit {
   }
 
   generatePdf(option: number): void {
-    console.log(this.title);
     this.pdfGenerator.generatePDF(option, this.title, this.keywords, this.notes, this.summary);
   }
 
