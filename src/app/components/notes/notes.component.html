@@ -1,67 +1,71 @@
-<!-- This example requires Tailwind CSS v2.0+ -->
-<div class="container mx-auto px-4 max-w-7xl">
-  <div class="grid grid-cols-1 gap-4">
-    <div>
-      <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
-      <div class="mt-1 relative rounded-md shadow-sm">
-        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-        </div>
-        <input type="text" name="price" id="price" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Test">
-      </div>
+<div class="container max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8 pt-10">
+  <div class="grid grid-cols-1 pb-6">
+    <app-textarea
+      ngDefaultControl="title"
+      [selectedInputField]="selectedInputField!"
+      [inputFieldPosition]="1"
+      [label]="'title'"
+      [rows]="1"
+      [ngModel]="title!"
+      (editSelectedInputFieldEvent)="setSelectedInputField($event)">
+    </app-textarea>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-6 gap-6 pb-6">
+    <div class="md:col-start-1 md:col-end-3">
+      <app-textarea
+        ngDefaultControl="keywords"
+        [selectedInputField]="selectedInputField!"
+        [inputFieldPosition]="2"
+        [label]="'keywords'"
+        [rows]="12"
+        [ngModel]="keywords!"
+        (editSelectedInputFieldEvent)="setSelectedInputField($event)">
+      </app-textarea>
+    </div>
+    <div class="md:col-start-3 md:col-end-7">
+      <app-textarea
+        ngDefaultControl="notes"
+        [selectedInputField]="selectedInputField!"
+        [inputFieldPosition]="3"
+        [label]="'notes'"
+        [rows]="12"
+        [ngModel]="notes!"
+        (editSelectedInputFieldEvent)="setSelectedInputField($event)">
+      </app-textarea>
     </div>
   </div>
-  <div class="grid md:grid-cols-6 gap-4">
-    <div class="col-start-1 col-end-3">
-      <div>
-        <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
-        <div class="mt-1 relative rounded-md shadow-sm">
-          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-          </div>
-          <input type="text" name="price" id="price" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Test">
-        </div>
-      </div>
-    </div>
-    <div class="col-start-3 col-end-7">
-      <div>
-        <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
-        <div class="mt-1 relative rounded-md shadow-sm">
-          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-          </div>
-          <input type="text" name="price" id="price" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Test">
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="grid grid-cols-1 gap-4">
-    <div>
-      <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
-      <div class="mt-1 relative rounded-md shadow-sm">
-        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-        </div>
-        <input type="text" name="price" id="price" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Test">
-      </div>
-    </div>
+  <div class="grid grid-cols-1 pb-6">
+    <app-textarea
+      ngDefaultControl="summary"
+      [selectedInputField]="selectedInputField!"
+      [inputFieldPosition]="4"
+      [label]="'summary'"
+      [rows]="6"
+      [ngModel]="summary!"
+      (editSelectedInputFieldEvent)="setSelectedInputField($event)">
+    </app-textarea>
   </div>
 </div>
-
-
 <div class="bg-gray-50">
   <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
-    <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-      <span class="block">Ready to dive in?</span>
-      <span class="block text-indigo-600">Start your free trial today.</span>
+    <h2 class="text-3xl font-extrabold tracking-tight text-conotes-blue sm:text-4xl">
+      <span class="block">{{'form.question' | translate }}</span>
+      <span class="block text-indigo-400">{{'form.cta' | translate }}</span>
     </h2>
     <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
       <div class="inline-flex rounded-md shadow">
-        <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+        <button (click)="generatePdf(1)"
+                class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-conotes-blue hover:bg-indigo-400">
           {{'button.create' | translate }}
-        </a>
+        </button>
       </div>
       <div class="ml-3 inline-flex rounded-md shadow">
-        <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
-          {{'button.preview' | translate }}
-        </a>
+        <button (click)="generatePdf(2)"
+                class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-conotes-blue bg-indigo-100 hover:bg-indigo-200">
+          {{'button.preview' | translate}}
+        </button>
       </div>
     </div>
   </div>
 </div>
+

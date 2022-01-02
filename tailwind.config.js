@@ -6,9 +6,13 @@ module.exports = {
       './src/**/*.{html,ts}',
     ]
   },
-  darkMode: 'class', // or 'media' or 'class'
+  darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'conotes-blue': '#24273f'
+      }
+    },
   },
   variants: {
     extend: {},

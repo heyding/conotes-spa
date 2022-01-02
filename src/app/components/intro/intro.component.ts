@@ -12,4 +12,7 @@ export class IntroComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  scrollToElement(notes: any): void {
+    notes.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"})
+  }
 }

@@ -9,6 +9,12 @@ import {FooterComponent} from './components/footer/footer.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { TextareaComponent } from './shared/textarea/textarea.component';
+import {FormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
+import {DatePipe} from '@angular/common';
+import { LandingpageComponent } from './components/landingpage/landingpage.component';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,10 +22,13 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
     IntroComponent,
     NotesComponent,
     AnnouncementComponent,
-    FooterComponent
+    FooterComponent,
+    TextareaComponent,
+    LandingpageComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     // ngx-translate and the loader module
     HttpClientModule,
     TranslateModule.forRoot({
@@ -28,9 +37,11 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    FormsModule,
+    RouterModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {
