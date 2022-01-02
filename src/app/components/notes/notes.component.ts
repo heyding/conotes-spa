@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {PdfGeneratorService} from '../../shared/services/pdf-generator.service';
 
 @Component({
   selector: 'app-notes',
@@ -7,16 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotesComponent implements OnInit {
 
-  title: string | undefined = '';
-  keywords: string | undefined = '';
-  notes: string | undefined = '';
-  summary: string | undefined = '';
-  selectedInputField: string | undefined = '';
-
-  inputFieldPosition: number | undefined;
+  title: string = '';
+  keywords: string = '';
+  notes: string = '';
+  summary: string = '';
+  selectedInputField: string = '';
   value: string | undefined;
 
-  constructor() { }
+  constructor(private pdfGenerator: PdfGeneratorService) {
+  }
 
   ngOnInit(): void {
   }
@@ -25,13 +25,33 @@ export class NotesComponent implements OnInit {
     this.selectedInputField = selectedInputField;
   }
 
-  generatePdf(option: number): void {
-    let title: string = '';
-    let keywords: string = '';
-    let notes: string = '';
-    let conclusion: string = '';
+  editContent(inputFieldOptions: any[]): void {
+    switch (inputFieldOptions[0]) {
+      case 1: {
+        this.title = inputFieldOptions[1];
+        break;
+      }
+      case 2: {
+        this.keywords = inputFieldOptions[1];
+        break;
+      }
+      case 3: {
+        this.notes = inputFieldOptions[1];
+        break;
+      }
+      case 4: {
+        this.summary = inputFieldOptions[1];
+        break;
+      }
+      default: {
+        break;
+      }
+    }
+  }
 
-    // this.pdfGenerator.generatePDF(option, title, keywords, notes, conclusion);
+  generatePdf(option: number): void {
+    console.log(this.title);
+    this.pdfGenerator.generatePDF(option, this.title, this.keywords, this.notes, this.summary);
   }
 
 }

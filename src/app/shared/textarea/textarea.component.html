@@ -20,6 +20,7 @@
                 name="{{label}}"
                 id="{{label}}"
                 [(ngModel)]="ngModel"
+                (ngModelChange)="editContent(inputField.value)"
                 (focus)="setSelectedInputField(label)"
                 (blur)="setSelectedInputField('')"
                 class="w-full px-4 py-4 resize-none font-medium text-lg text-gray-300 focus:text-conotes-blue shadow-xl bg-gray-100 focus:bg-indigo-100 rounded-md block border-none outline-none"

@@ -7,6 +7,7 @@
       [label]="'title'"
       [rows]="1"
       [ngModel]="title!"
+      (editContentEvent)="editContent($event)"
       (editSelectedInputFieldEvent)="setSelectedInputField($event)">
     </app-textarea>
   </div>
@@ -19,6 +20,7 @@
         [label]="'keywords'"
         [rows]="12"
         [ngModel]="keywords!"
+        (editContentEvent)="editContent($event)"
         (editSelectedInputFieldEvent)="setSelectedInputField($event)">
       </app-textarea>
     </div>
@@ -30,6 +32,7 @@
         [label]="'notes'"
         [rows]="12"
         [ngModel]="notes!"
+        (editContentEvent)="editContent($event)"
         (editSelectedInputFieldEvent)="setSelectedInputField($event)">
       </app-textarea>
     </div>
@@ -42,6 +45,7 @@
       [label]="'summary'"
       [rows]="6"
       [ngModel]="summary!"
+      (editContentEvent)="editContent($event)"
       (editSelectedInputFieldEvent)="setSelectedInputField($event)">
     </app-textarea>
   </div>

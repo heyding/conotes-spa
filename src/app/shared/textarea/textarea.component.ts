@@ -21,6 +21,10 @@ export class TextareaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  editContent(value: string) {
+    this.editContentEvent.emit([this.inputFieldPosition, value]);
+  }
+
   setSelectedInputField(value: string) {
     this.editSelectedInputFieldEvent.emit(value);
   }
